@@ -1,0 +1,4 @@
+June 29th Thursday:
+Set up all the files that I would need. A nodeJs server was also set up in order to access the RSS feed in an attempt to bypass CORS and SOP. Set up all the data structures I would need (2 of them) and set up the search bar which will have more functionality later on.
+
+June 30th Friday:

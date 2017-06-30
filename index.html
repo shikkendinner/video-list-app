@@ -3,9 +3,19 @@
 <html>
   <head>
     <title>Video List App</title>
-    <script type="text/javascript" src="javascript/app.js" defer="defer"></script>
+    <!-- Angular JS 1.4.9 Library  -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <!-- Custom javascript file for angular modules  -->
+    <script type="text/javascript" src="javascript/app.js"></script>
   </head>
-  <body>
-    <h1 id="hello"></h1>
+  <body ng-app="vlApp" ng-controller="vlCtrl">
+    <h1>Video List App</h1>
+    <!-- Defines whether to search for keywords within a title or a tag (defaulted to title) -->
+    <select ng-model="searchFocus" ng-init="searchFocus = 'title'">
+      <option value="title" selected>Title</option>
+      <option value="tag">Tag</option>
+    </select>
+    <!-- The search bar -->
+    <input type="text" placeholder="Search for a {{searchFocus}}" ng-model="searchWord"/>
   </body>
 </html>

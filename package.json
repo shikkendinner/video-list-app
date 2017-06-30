@@ -1,0 +1,22 @@
+{
+  "name": "videoapp",
+  "version": "1.0.0",
+  "description": "Generates a list of videos from the Channel9 website",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shikkendinner/video-list-app.git"
+  },
+  "author": "Ali Azhar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shikkendinner/video-list-app/issues"
+  },
+  "homepage": "https://github.com/shikkendinner/video-list-app#readme",
+  "dependencies": {
+    "express": "^4.15.3"
+  }
+}
