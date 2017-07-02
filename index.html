@@ -7,8 +7,10 @@
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
     <!-- Custom javascript file for angular modules  -->
     <script type="text/javascript" src="javascript/app.js"></script>
+    <!-- Custom CSS file for this page -->
+    <link rel="stylesheet" type="text/css" href="css/index.css">
   </head>
-  <body ng-app="vlApp" ng-controller="vlCtrl">
+  <body ng-app="vlApp" ng-controller="vlCtrl" ng-cloak>
     <h1>Video List App</h1>
     <!-- Defines whether to search for keywords within a title or a tag (defaulted to title) -->
     <select ng-model="searchFocus" ng-init="searchFocus = 'title'">
@@ -17,5 +19,21 @@
     </select>
     <!-- The search bar -->
     <input type="text" placeholder="Search for a {{searchFocus}}" ng-model="searchWord"/>
+    <br />
+    <!-- This is where all the videos that are searched are -->
+    <div ng-repeat="(title, data) in videoDB">
+      <h4>
+        {{title}}
+      </h4>
+      <span ng-repeat="tag in data.tags">
+        {{tag}}
+      </span>
+      <p>
+        {{data.description}}
+      </p>
+      <video width="640" height="500" controls>
+        <source ng-src="{{data.url}}" type="video/mp4"/>
+      </video>
+    </div>
   </body>
 </html>
