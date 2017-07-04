@@ -12,3 +12,6 @@ Added CSS to index.html, plus cleaned up the presentation of the video data by m
 
 July 3rd Monday:
 Added functionality to the button that presented/hid the video. Added search functionality. Removed one of the data structures because it was surplus to requirements. Completed the project.
+
+July 4th Tuesday:
+Tested the application as much as possible. Fixed any problems encountered.
