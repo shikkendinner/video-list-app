@@ -21,17 +21,22 @@
     <input type="text" placeholder="Search for a {{searchFocus}}" ng-model="searchWord"/>
     <br />
     <!-- This is where all the videos that are searched are -->
-    <div ng-repeat="(title, data) in videoDB">
-      <h4>
-        {{title}}
-      </h4>
-      <span ng-repeat="tag in data.tags">
-        {{tag}}
-      </span>
-      <p>
+    <div ng-repeat="(title, data) in videoDB" ng-show="filterVideo(title, searchFocus, searchWord)">
+      <div id="titleArea" ng-click="updateDescriptionView($event, title)">
+        <h4 id="title">
+          {{title}}
+        </h4>
+        <span id="tag" ng-repeat="tag in data.tags">
+          {{tag}}
+        </span>
+        <button id="videoButton" ng-click="updateVideoView($event, title)">
+          Watch Video
+        </button>
+      </div>
+      <p id="description" ng-show="data.show">
         {{data.description}}
       </p>
-      <video width="640" height="500" controls>
+      <video width="640" ng-if="data.displayVideo" controls autoplay muted>
         <source ng-src="{{data.url}}" type="video/mp4"/>
       </video>
     </div>

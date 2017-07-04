@@ -1,3 +1,67 @@
+/*This allows parts of a page to be only displayed once the DOM has loaded*/
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none !important;
+}
+
+/*Defines the styling of the area that encompasses the title and the tags*/
+#titleArea {
+  border-left: 0.3em solid black;
+  padding-left: 0.5em;
+  padding-bottom: 0.3em;
+  background-color: #E6E6E6;
+  cursor: pointer;
+}
+#titleArea:hover{
+  background-color: #CCCCCC;
+}
+/*A class that is added and removed depending on if the description is visible*/
+#titleArea.active{
+  background-color: #CCCCCC;
+  border-left: 0.3em solid red;
+}
+
+/*CSS styling for the title of the videos*/
+#title {
+  margin-bottom: 0.5em;
+}
+
+/*CSS styling for the description of the videos*/
+#description {
+  margin-top: 0em;
+  padding: 0.5em 0.3em;
+  background-color: #E6E6E6;
+  text-align: justify;
+}
+
+/*CSS styling for the tags of the videos*/
+#tag {
+  background-color:#FFFFFF;
+  border: 0.05em solid black;
+  border-radius: 0.2em;
+  margin: 0em 0.5em;
+  padding: 0em 0.1em;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.75em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/*CSS styling for the button that displays the video popup*/
+#videoButton {
+  background-color: #3366FF;
+  color: #F2F2F2;
+  border: 0.05em solid black;
+  border-radius: 0.2em;
+}
+#videoButton:active {
+  background-color: #FF6633;
+}
+/*A class that is added and removed depending on if the video is visible*/
+#videoButton.active{
+  background-color: #FF4D4D;
+}
+
+/*CSS styling for video tags*/
+video {
+  margin-top: 0.5em;
 }

@@ -2,7 +2,13 @@ June 29th Thursday:
 Set up all the files that I would need. A nodeJs server was also set up in order to access the RSS feed in an attempt to bypass CORS and SOP. Set up all the data structures I would need (2 of them) and set up the search bar which will have more functionality later on.
 
 June 30th Friday:
-Wrote the code to parse all the data from the RSS feed and store it within the two databases (videoDB and tagDB)
+Wrote the code to parse all the data from the RSS feed and store it within the two databases (videoDB and tagDB).
 
 July 1st Saturday:
-Basic presentation of all videos with just their title, description, link, and tags
+Basic presentation of all videos with just their title, description, link, and tags.
+
+July 2nd Sunday:
+Added CSS to index.html, plus cleaned up the presentation of the video data by making it organized, clean, and up to specification. Added clickable abilities to make it easier to show/hide the description and the video.
+
+July 3rd Monday:
+Added functionality to the button that presented/hid the video. Added search functionality. Removed one of the data structures because it was surplus to requirements. Completed the project.
