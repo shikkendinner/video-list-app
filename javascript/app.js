@@ -71,28 +71,33 @@ app.controller("vlCtrl", ["$scope", "$http", function($scope, $http){
   //this filters the video with the particular title or tag by checking whether the search term contains a part of the title or tag (depending on which of the two is picked from the dropdown list)
   $scope.filterVideo = function (title, searchType, searchWord){
     var result = false;
-    var trimmedSW = searchWord.trim();
-    var pattern = new RegExp(trimmedSW, "i");
-    //check first if the search refers to a tag or a title
-    if(searchType === "title"){
-      //case insensitive search
-      result = pattern.test(title);
-    } else {
-      //its a search involving tags, get the tags from the database for the particular title and compare the searchWord to them
-      var tags = $scope.videoDB[title].tags;
-       
-      for(var i=0; i<tags.length; i++){
-        //case insensitive search, if found one match, the video is filtered in
-        if(pattern.test(tags[i])){
+    if(!(searchWord === undefined)){
+      var trimmedSW = searchWord.trim();
+      var pattern = new RegExp(trimmedSW, "i");
+      //check first if the search refers to a tag or a title
+      if(searchType === "title"){
+        //case insensitive search
+        result = pattern.test(title);
+      } else {
+        //its a search involving tags, get the tags from the database for the particular title and compare the searchWord to them
+        var tags = $scope.videoDB[title].tags;
+
+        for(var i=0; i<tags.length; i++){
+          //case insensitive search, if found one match, the video is filtered in
+          if(pattern.test(tags[i])){
+            result = true;
+            break;
+          }
+        }
+
+        //this accepts videos with no tags when a empty string is searched
+        if(tags.length === 0 && trimmedSW.length === 0){
           result = true;
-          break;
         }
       }
-      
-      //this accepts videos with no tags when a empty string is searched
-      if(tags.length === 0 && trimmedSW.length === 0){
-        result = true;
-      }
+    } else {
+      //nothing searched, so just display this video
+      result = true;
     }
     
     return result;
