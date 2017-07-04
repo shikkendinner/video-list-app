@@ -71,7 +71,7 @@ app.controller("vlCtrl", ["$scope", "$http", function($scope, $http){
   //this filters the video with the particular title or tag by checking whether the search term contains a part of the title or tag (depending on which of the two is picked from the dropdown list)
   $scope.filterVideo = function (title, searchType, searchWord){
     var result = false;
-    if(!(searchWord === undefined)){
+    if(searchWord !== undefined){
       var trimmedSW = searchWord.trim();
       var pattern = new RegExp(trimmedSW, "i");
       //check first if the search refers to a tag or a title
