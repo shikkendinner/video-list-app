@@ -72,19 +72,18 @@ app.controller("vlCtrl", ["$scope", "$http", function($scope, $http){
   $scope.filterVideo = function (title, searchType, searchWord){
     var result = false;
     if(searchWord !== undefined){
-      var trimmedSW = searchWord.trim();
-      var pattern = new RegExp(trimmedSW, "i");
+      var trimmedSW = searchWord.trim().toLowerCase();
       //check first if the search refers to a tag or a title
       if(searchType === "title"){
         //case insensitive search
-        result = pattern.test(title);
+        result = title.toLowerCase().indexOf(trimmedSW) >= 0 ? true:false;
       } else {
         //its a search involving tags, get the tags from the database for the particular title and compare the searchWord to them
         var tags = $scope.videoDB[title].tags;
 
         for(var i=0; i<tags.length; i++){
           //case insensitive search, if found one match, the video is filtered in
-          if(pattern.test(tags[i])){
+          if(tags[i].toLowerCase().indexOf(trimmedSW) >= 0){
             result = true;
             break;
           }
