@@ -6,3 +6,10 @@ This application is a single page AngularJS application that utilizes a Node.js 
   2. Install [Node.js](https://nodejs.org/en/download/), which should also install npm
   3. Go to the project directory and run `npm install`
   4. Finally, run `npm start` and that should start the server at http://localhost:3000/
+
+## Packages/Libraries/Frameworks Used
+The following frameworks and libraries were used:
+  * [AngularJS](https://angularjs.org/)
+  * [Node.js](https://nodejs.org/en/) - The following are packages used within the Node.js server
+    * [Express](https://expressjs.com/)
+    * [Request](https://www.npmjs.com/package/request)
