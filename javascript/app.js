@@ -140,7 +140,7 @@ function populateDatabases($scope, $http){
           $scope.videoDB[title].url = enclosure[0].attributes.getNamedItem("url").nodeValue;
 
           //get the description for the video
-          $scope.videoDB[title].description = video.getElementsByTagName("summary")[0].childNodes[0].nodeValue;
+          $scope.videoDB[title].description = video.getElementsByTagNameNS("http://www.itunes.com/dtds/podcast-1.0.dtd", "summary")[0].childNodes[0].nodeValue;
 
           //get the tags for the video, and store it within the database
           //if a video does not have a tag, it will not be in the database
